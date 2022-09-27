@@ -2,17 +2,17 @@
 
 ## Pre-requisites
 ### Workstation
-- [] Docker or Podman
-- [] Cpd-cli 
-- [] Ansible
-- [] OCP CLI
-- [] Access to `icr.io`
+- [ ] Docker or Podman
+- [ ] Cpd-cli 
+- [ ] Ansible
+- [ ] OCP CLI
+- [ ] Access to `icr.io`
 
 
 ### ROSA
-- [] 3 Master Nodes with 8vCPU and 32GB RAM
-- [] 5 Worker Nodes with 16vCPU and 64GB RAM
-- [] OCP 4.8+
+- [ ] 3 Master Nodes with 8vCPU and 32GB RAM
+- [ ] 5 Worker Nodes with 16vCPU and 64GB RAM
+- [ ] OCP 4.8+
 
  
 ## Install fundational services
@@ -34,7 +34,7 @@ cpd-cli manage apply-cr --components=${COMPONENTS} --release=${VERSION} --cpd_in
 ```
 cpd-cli manage login-to-ocp --token=${OCP_TOKEN}  --server=${OCP_URL}
 ```
-2. 
+
 
 
 
