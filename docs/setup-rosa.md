@@ -8,52 +8,49 @@ This configuration is set on AWS web console. We will need to get **Access Key I
 3. Click the `Security credentials` secion and click `Create access Key`.
 4. Copy and save the **Access Key ID** and **Secret Access Key**, it will be used later in the process.
 
-More information [here] ([**Access Key ID** and **Secret Access Key**] (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?icmpid=docs_iam_console#Using_CreateAccessKey)) from AWS doc.
+More information [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?icmpid=docs_iam_console#Using_CreateAccessKey).
 
 
 ### Enable ROSA in your AWS account
-If you haven’t done so already, visit [https://console.aws.amazon.com/rosa/home](https://console.aws.amazon.com/rosa/home){target:"_blank"}  to enable ROSA in your AWS account. 
+If you haven’t done so already, visit [https://console.aws.amazon.com/rosa/home](https://console.aws.amazon.com/rosa/home) to enable ROSA in your AWS account. 
 
-### Download and install the ROSA command line tool
-Visit [https://console.redhat.com/openshift/create/rosa/welcome](https://console.redhat.com/openshift/create/rosa/welcome) and at the step 2, select the proper Operating System and then download it tool. 
 
-### Download and configure AWS CLI
+### Configure the AWS
+You will be asked to enter **Access Key ID** and **Secret Access Key**, previously prepared **AWS Access Key Id** and **Secret Access Key** will be used here.
+```
+aws configure
+```
+   
 
-1. Vist [https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and Download AWS CLI.
-
-2. Configure the AWS
-    ```sh
-    aws configure
-    ```
-
-    
-Previously prepared **AWS Access Key Id** and **Secret Access Key** will be used here.
 
 ### Login with ROSA
    
 You will be asked for providing an API token, get a token from [https://console.redhat.com/openshift/token/rosa](https://console.redhat.com/openshift/token/rosa).
-```sh
+```
 rosa login
 ```
 
 ### Verify your credentials and quota
-```sh
+```
 rosa whoami
 ```
-```sh
+```
 rosa verify quota
 ```
 
 If you are getting some error, please check your AWS account or the `aws configure`.    
 
 ### Deploy the cluster
-```sh
+```
 rosa create account-roles --mode auto --yes
 ```
-```sh
-rosa create cluster --cluster-name <cluster-name> --sts --mode auto --yes
+```
+rosa create cluster --cluster-name <your-cluster-name> --sts --mode auto --enable-autoscaling  --min-replicas 2 --max-replicas 5 --compute-machine-type <ec2-instance-type> --yes
 ```
 For more information, please refer to [https://www.rosaworkshop.io/rosa/2-deploy/](https://www.rosaworkshop.io/rosa/2-deploy/) to deploy the cluster on AWS.
+
+EC2 instance types can be found here: [https://aws.amazon.com/ec2/instance-types](https://aws.amazon.com/ec2/instance-types/).
+
 
 ### Create an Admin user
 
@@ -66,7 +63,7 @@ You will need to wait for a little while when you use the user name/password to 
 
 
 ### Get Openshift Webconsole URL
-```sh
+```
 rosa describe cluster -c <cluster-name> | grep Console
 ```
 

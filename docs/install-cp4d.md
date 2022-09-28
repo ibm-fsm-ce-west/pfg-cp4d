@@ -1,6 +1,7 @@
 ## Install Cloud Pak for Data
-- Update `cpd-vars.sh`
+- Update `scripts/vars.sh`.
 - Run `source ./cpd-vars.sh`
+- Update global image pull secret `cpd-cli manage add-icr-cred-to-global-pull-secret {IBM_ENTITLEMENT_KEY}`.
 - Log in to the cluster `cpd-cli manage login-to-ocp --token=${OCP_TOKEN}  --server=${OCP_URL}`
 - Create the OLM objects `cpd-cli manage apply-olm --release=${VERSION} --components=${COMPONENTS}`
 - Patch namespace scope

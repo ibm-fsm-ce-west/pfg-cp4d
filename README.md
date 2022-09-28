@@ -2,11 +2,12 @@
 
 ## Pre-requisites
 ### Workstation
+- [x] ROSA CLI
+- [x] AWS CLI
 - [x] Docker or Podman
 - [x] Cpd-cli 
 - [x] OCP CLI
 - [x] Access to `icr.io`
-
 
 ### ROSA Requirements
 - [x] 3 Master Nodes with 8vCPU and 32GB RAM
