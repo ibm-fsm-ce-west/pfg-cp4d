@@ -14,17 +14,6 @@
 - [x] OCP 4.8+
 
 ## AWS Configuration 
-### Create Hosted Zone on AWS Route 53
-This can be done on AWS web console.  You will need a domain or subdomain for this configuration.
-
-1. Navigate to `Route 53` -> `Hosted Zones`.
-1. Select `Create host zone` and then enter the domain/subdomain name.
-1. Select Type - `Public hosted zone` and then create it.
-
-The example below uses the subdomain `itz-aws.c14.me`.
-
-### Configure the DNS 
-Once the Route 53 Hosted Zone is created, it will generate some records. All the type `NS` records need to be configured in the DNS.
 
 ### Configure Identity and Access Management (IAM) 
 This configuration is set on AWS web console. We will need to get **Access Key ID** and **Secret Access Key** in this step.
@@ -51,11 +40,6 @@ oc patch NamespaceScope common-service -n ${PROJECT_CPFS_OPS} --type=merge --pat
 cpd-cli manage apply-cr --components=${COMPONENTS} --release=${VERSION} --cpd_instance_ns=${PROJECT_CPD_INSTANCE} --block_storage_class=${STG_CLASS_BLOCK} --file_storage_class=${STG_CLASS_FILE} --license_acceptance=true
 ```
 
-## Install Data Gate
-1. Run the cpd-cli manage login-to-ocp command to log in to the cluster as a user with sufficient permissions to complete this task. For example:
-```
-cpd-cli manage login-to-ocp --token=${OCP_TOKEN}  --server=${OCP_URL}
-```
 
 
 ## Create EFS and NFS storage
