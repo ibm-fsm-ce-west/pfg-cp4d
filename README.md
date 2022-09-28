@@ -36,6 +36,11 @@ cpd-cli manage login-to-ocp --token=${OCP_TOKEN}  --server=${OCP_URL}
 ```
 
 
+## Create EFS and NFS storage
+1. Create EFS on AWS console
+2. Create Security Group to allow inbound port 2049 to the EFS
+3. Assign the Security Group to EFS instance
+4. Follow the instruction on [IBM Knowledge Center](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=storage-setting-up-amazon-elastic-file-system).
 
 
 ## AWS NLB Setting
@@ -44,3 +49,8 @@ To fix it,
 1. Create NodePort service
 2. Add the port on the node to the security group, with CIDR block `0.0.0.0/0`
 3. Use NLB with Elastic IP(Static IP), and using the node port
+
+## Modify Work Nodes
+```
+rosa create machinepool --cluster=<cluster-name> --name=<machinepool-name> --instance-type=<ec2-instance-type> --replicas=<number-nodes>
+```
