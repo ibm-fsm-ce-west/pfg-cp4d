@@ -1,6 +1,6 @@
 ## Install Cloud Pak for Data
 - Review and update `scripts/vars.sh`.
-  - Please check if there is file storage on Openshift Console: `Storage` -> `StorageClasses`, if all names start with `gp`, then please follow the instruction from `4. Post Install Config`->`Create EFS storage` to create an EFS storage, click [here](docs/post-install.md) .
+  - Please check if there is file storage on Openshift Console: `Storage` -> `StorageClasses`, if all names start with `gp`, then please follow the instruction from `4. Post Install Config`->`Create EFS storage` to create an EFS storage, click [here](post-install.md) .
   - The variables need to be updated:
     - OCP_URL
     - OCP_TOKEN
