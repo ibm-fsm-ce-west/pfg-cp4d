@@ -1,7 +1,7 @@
-## Create EFS and NFS storage
+## Create EFS storage
 1. Create EFS on AWS console
-2. Create Security Group to allow inbound port 2049 to the EFS
-3. Assign the Security Group to EFS instance
+2. Find Security Group used by EFS and add inbound rule 2049 to the EFS
+3. If no Security Group from above step, then create a new Security Group and assign it to EFS instance
 4. Follow the instruction on [IBM Knowledge Center](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=storage-setting-up-amazon-elastic-file-system).
 
 
