@@ -6,7 +6,7 @@ Please follow the link [https://www.ibm.com/support/fixcentral/swg/selectFixes?p
 
 ## Install DS Client on RHEL
 
-1. Upload the `v11.5.8_linuxx64_rtcl.tar.gz` to the RHEL 9 Batsion host `/tmp` folder.
+1. Upload the `v11.5.8_linuxx64_rtcl.tar.gz` to the RHEL 9 Bastion host `/tmp` folder.
 2. Untar the .gz file
 ```
 cd /tmp
