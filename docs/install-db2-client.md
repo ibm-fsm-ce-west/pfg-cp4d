@@ -17,11 +17,11 @@ tar -xvf v11.5.8_linuxx64_rtcl.tar.gz
 sudo yum install libpam.so* libpam.so.0 libaio binutils -y
 sudo yum install libstdc++ libstdc++.so.6 -y
 ```
-4. Create a linux user - db2inst1
+4. Create a Linux user - db2inst1
 ```
 sudo useradd db2inst1 
 ```
-5. Swith user
+5. Swith to the user created
 ```
 sudo su - db2inst1
 ```
@@ -31,7 +31,7 @@ sudo su - db2inst1
 ```
 Note: please accept the terms by typing `yes` in the prompt.
 
-7. Source profile
+7. Source the db2 profile
 ```
 . $HOME/sqllib/db2profile
 ```
