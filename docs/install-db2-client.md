@@ -15,6 +15,7 @@ tar -xvf v11.5.8_linuxx64_rtcl.tar.gz
 3. Install dependent libs
 ```
 sudo yum install libpam.so* libpam.so.0 libaio binutils -y
+sudo yum install libstdc++ libstdc++.so.6 -y
 ```
 4. Create a linux user - db2inst1
 ```
@@ -29,6 +30,7 @@ sudo su - db2inst1
 /tmp/rtcl/db2_install 
 ```
 Note: please accept the terms by typing `yes` in the prompt.
+
 7. Source profile
 ```
 . $HOME/sqllib/db2profile
